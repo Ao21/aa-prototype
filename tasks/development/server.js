@@ -5,9 +5,9 @@ import {
 	processSass
 } from './styles';
 import {
-	processJS
+	processJS,
+	processBower
 } from './scripts';
-
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
 
@@ -39,6 +39,7 @@ export function browser(done) {
 }
 
 export function watch() {
+	gulp.watch(['public/vendor'], gulp.series(processBower, reloadBrowser));
 	gulp.watch(['app/**/*.html'], gulp.series(reloadBrowser));
 	gulp.watch(['app/styles/**/*.{scss,css}'], gulp.series(processSass));
 	gulp.watch(['app/scripts/**/*.js'], gulp.series(processJS, reloadBrowser));

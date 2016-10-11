@@ -1,14 +1,16 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
+var wiredep = require('wiredep').stream;
+
 const $ = gulpLoadPlugins({
   pattern: ['gulp-*', 'gulp.*', 'main-bower-files','wiredep'],
   replaceString: /\bgulp[\-.]/
 });
 
 export function processBower() {
-  gulp.src('app/index.html')
-    .pipe($.wiredep({}))
+  return gulp.src('app/index.html')
+    .pipe(wiredep())
     .pipe(gulp.dest('app'));
 }
 

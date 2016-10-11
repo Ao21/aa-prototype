@@ -1,0 +1,19 @@
+{
+  "name": "generator-prototype-source",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Ronan Brett <Ronan.Brett@theaa.ie>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Ao21/aa-prototype",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
